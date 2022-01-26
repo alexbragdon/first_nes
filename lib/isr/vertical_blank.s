@@ -56,25 +56,43 @@
     lda     #$00                    ;
     sta     _JOY1                   ; Controllers for first and second player are now latched
                                     ; and will not change
+
+  ; ----------------------------
+  ; Shift over the firt buttons.
+  ; ----------------------------
+
+    lda     _JOY1 
+    lda     _JOY1 
+    lda     _JOY1 
+    lda     _JOY1 
+    lda     _JOY1 
+    lda     _JOY1
+
   ; --------------
-  ; Read button A.
+  ; Read button Left.
   ; --------------
 
     lda     _JOY1                   ; 
     and     #%00000001              ; Only look at bit 0
-    beq     readButtonAEnd          ; Branch to readButtonAEnd if button A is NOT pressed (0)                                    
-    jsr     MoveLuigiRight          ; Call the procedure that moves the Luigi sprites right
-  readButtonAEnd:                   ;
+    beq     readButtonLeftEnd       ; Branch to readButtonAEnd if button A is NOT pressed (0)                                    
+    jsr     MoveLuigiLeft           ; Call the procedure that moves the Luigi sprites right
+  readButtonLeftEnd:                ;
 
   ; ---------------
-  ; Read button B.
+  ; Read button Right.
   ; ---------------
  
     lda     _JOY1                    
-    and     #%00000001              ; Only look at bit 0
-    beq     readButtonBEnd          ; Branch to readButtonBEnd if button B is NOT pressed (0)                                    
-    jsr     MoveLuigiLeft           ; Call the procedure that moves the Luigi sprites left
-  readButtonBEnd:                   ;
+    and     #%00000001              ; Only look at bit 7
+    beq     readButtonRightEnd      ; Branch to readButtonBEnd if button B is NOT pressed (0)                                    
+    jsr     MoveLuigiRight          ; Call the procedure that moves the Luigi sprites left
+  readButtonRightEnd:               ;
+
+
+  ; ---------------
+  ; Luigi Falls
+  ; ---------------
+    jsr     MoveLuigiDown 
   
     rti                             ; Return from interrupt 
 
