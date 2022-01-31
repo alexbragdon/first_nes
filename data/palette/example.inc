@@ -44,7 +44,7 @@ _PALETTE:
  ; Sprite palettes (selected by the attribute bits 0-1 of the sprites)
 .BYTE $0f, $1c, $15, $14
 .BYTE $0f, $02, $38, $3c
-.BYTE $0f, $30, $37, $1a  ; Luigi-like colors
+.BYTE $0f, $16, $01, $36  ; DK-like colors
 .BYTE $0f, $0f, $0f, $0f  ; All black
 
 ; End of data/palette/example.inc

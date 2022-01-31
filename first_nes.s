@@ -80,7 +80,7 @@
 
 ; Graphics tile data, used by the sprites
 .SEGMENT "TILES"
-.INCBIN "data/tiles/smb1_chr.bin"
+.INCBIN "data/tiles/dk.bin"
 
 
 ; =================================================================================================

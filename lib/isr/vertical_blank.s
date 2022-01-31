@@ -58,7 +58,7 @@
                                     ; and will not change
 
   ; ----------------------------
-  ; Shift over the firt buttons.
+  ; Shift over the first buttons.
   ; ----------------------------
 
     lda     _JOY1 
@@ -90,7 +90,7 @@
 
 
   ; ---------------
-  ; Luigi Falls
+  ; DK Falls
   ; ---------------
     jsr     MoveLuigiDown 
   
